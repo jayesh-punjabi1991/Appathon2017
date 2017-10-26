@@ -1,0 +1,10 @@
+[
+    {
+        "car_name": "Vitara",
+        "car_id": "1",
+        "description": "Electric Vehicle",
+        "type": "Electric",
+        "car_model": "VZ103",
+        "mileage": "21"
+    }
+]

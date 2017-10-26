@@ -1,0 +1,22 @@
+[
+  {
+      "id": 52500,
+      "driverID": "DOO1",
+      "firstName": "Rajesh",
+      "lastName": "P",
+      "age": null,
+      "rating": 0,
+      "behavior": "conservative",
+      "yearDriving": 5
+  },
+  {
+      "id": 52501,
+      "driverID": "DOO1",
+      "firstName": "Pawan",
+      "lastName": "Kumar",
+      "age": null,
+      "rating": 0,
+      "behavior": "conservative",
+      "yearDriving": 5
+  }
+]

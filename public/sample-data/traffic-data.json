@@ -1,0 +1,22 @@
+[
+  {
+    "motorcycle":{
+      "Northeast":11,
+      "Northwest":14,
+      "Southeast":17,
+      "Southwest":12
+    },
+    "car":{
+      "Northeast":33,
+      "Northwest":4,
+      "Southeast":11,
+      "Southwest":10
+    },
+    "truck":{
+      "Northeast":40,
+      "Northwest":2,
+      "Southeast":21,
+      "Southwest":5
+    }
+  }
+]

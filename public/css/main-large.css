@@ -1,0 +1,9 @@
+/***************For desktops and larger desktops******************/
+@media only screen and (min-width: 992px){
+  .hide-large{
+    display: none;
+  }
+  .lt-md-lg{
+    float: left
+  }
+}

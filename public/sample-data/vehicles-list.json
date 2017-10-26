@@ -1,0 +1,26 @@
+[
+  {
+      "id": 50001,
+      "vehicleID": "VOO2",
+      "model": "Tesla Model S",
+      "category": "SUV",
+      "year": "2016",
+      "range": 300,
+      "weight": 4850,
+      "battery": 100,
+      "batteryUOM": "kwh",
+      "kwhperMI": 0.32
+  },
+  {
+      "id": 50002,
+      "vehicleID": "VOO1",
+      "model": "Tesla Model X",
+      "category": "SUV",
+      "year": "2016",
+      "range": 300,
+      "weight": 4850,
+      "battery": 100,
+      "batteryUOM": "kwh",
+      "kwhperMI": 0.32
+  }
+]

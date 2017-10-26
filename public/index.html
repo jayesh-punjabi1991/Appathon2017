@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title class="title-entry">Plan&Plug</title>
+    <base href="/">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <!-- <script type='application/javascript' src='bower_components/px/dist/px.min.js'></script> -->
+
+    <!-- Just needed for IE -->
+    <script src="bower_components/es6-promise/dist/es6-promise.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBGn3obdlYMUPXCoR3uJhfUTqj1l1NyFiI"></script>
+    <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="bower_components/highcharts/highcharts.js"></script>
+    <script src="bower_components/highcharts/highcharts-more.js"></script>
+    <script src="bower_components/highcharts/modules/data.js"></script>
+    <script src="bower_components/highcharts/modules/exporting.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <link rel="import" href="polymer-loader.vulcanized.html">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="bower_components/ui-bootstrap/src/datepicker/datepicker.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main-small.css">
+    <link rel="stylesheet" href="css/main-middle.css">
+    <link rel="stylesheet" href="css/main-large.css">
+
+</head>
+
+<body unresolved class="app" data-ng-controller="MainCtrl">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="images/logo-plug-and-go.jpeg" alt="" class="logo"><h3 class="heading title-entry">Plan&Plug</h3></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav hide-large header-nav">
+          <li class="home-nav active"><a ui-sref="analyticview"><i class="fa fa-home"></i>&nbsp;&nbsp;Home <span class="sr-only">(current)</span></a></li>
+          <li class="param-nav"><a ui-sref="ParameterAnalysis"><i class="fa fa-line-chart"></i>&nbsp;&nbsp;Parameter Analysis</a></li>
+          <!-- <li class="real-nav"><a ui-sref="realtimeview"><i class="fa fa-area-chart"></i>&nbsp;&nbsp;Realtime Streaming</a></li> -->
+        </ul>
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="container-fluid padding-0-right padding-0-left">
+    <div class="row main-content margin-0">
+      <nav id="sideNav" class="col-lg-1 padding-0-right padding-0-left hidden-small hidden-middle">
+        <ul>
+          <li class="s-home-nav sidebar-active">
+            <a ui-sref="analyticview">
+              <p class="text-center menu-icon"><i class="fa fa-home fa-4x"></i></p>
+              <p class="text-center">Home</p>
+            </a>
+          </li>
+          <li class="s-param-nav">
+            <a ui-sref="ParameterAnalysis">
+              <p class="text-center menu-icon"><i class="fa fa-line-chart fa-4x"></i></p>
+              <p class="text-center">Parameter Analysis</p>
+            </a>
+          </li>
+          <!-- <li class="s-real-nav">
+            <a ui-sref="realtimeview">
+              <p class="text-center menu-icon"><i class="fa fa-area-chart fa-4x"></i></p>
+              <p class="text-center">Realtime Streaming</p>
+            </a>
+          </li> -->
+        </ul>
+      </nav>
+      <div id="main-wrapper" class="col-lg-11 col-sm-12 padding-0-left padding-0-right">
+        <div ui-view></div>
+      </div>
+    </div>
+  </div>
+  <nav class="footer-div navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="container-fluid">
+      <span class="text-white">&copy; genpact</span>
+    </div>
+  </nav>
+</body>
+<script>
+    // IE11 workaround: We can't rely on IE's load order for scripts that are loaded outside of require.js (might
+    //  be an issue with the web components polyfill), so we wait for the HTMLImportsLoaded event to ensure our
+    //  web components' scripts have loaded.
+    window.addEventListener('HTMLImportsLoaded', function(e) {
+        var elScript = document.createElement('script');
+        elScript.setAttribute('src', 'bower_components/requirejs/require.js');
+        elScript.setAttribute('data-main', 'scripts/bootstrapper.js');
+        document.getElementsByTagName('body')[0].appendChild(elScript);
+    });
+</script>
+
+</html>

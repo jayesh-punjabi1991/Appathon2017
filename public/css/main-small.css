@@ -1,0 +1,27 @@
+/***************For mobiles******************/
+@media only screen and (max-width: 768px){
+  .hidden-small{
+    display: none;
+  }
+  .padding-left-small{
+    padding-left: 15px;
+  }
+  .padding-right-small{
+    padding-right: 15px;
+  }
+  .margin-top-small{
+    margin-top: 10px;
+  }
+  #main-wrapper {
+    min-height: 100%;
+    margin-top: 60px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .rt-small{
+    float:right;
+  }
+  .margin-5-right-small{
+    margin-right: 5px;
+  }
+}

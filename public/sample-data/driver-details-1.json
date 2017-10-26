@@ -1,0 +1,9 @@
+[
+    {
+        "driver_name": "John",
+        "driver_id": "1",
+        "description": "drives recklessly",
+        "can_drive": "4-wheeler",
+        "rating": "7.5/10"
+    }
+]

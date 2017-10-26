@@ -1,0 +1,114 @@
+[
+  {
+    "distanceMatrix": {
+        "origin": "Washington, DC, USA",
+        "destination": "Houston, TX, USA",
+        "duration": "20 hours 29 mins",
+        "distance": "1,408 mi"
+    },
+    "stationStats": {
+        "stationCount": 7,
+        "evPosts": 98
+    },
+    "evStation": [
+        {
+          "stationName": "CCSF - SFO",
+          "stationID": "60402",
+          "stationPhone": "888-758-4389",
+          "zipCode": "94128",
+          "accessHours": "24 hours daily",
+          "latitude": 37.6154652,
+          "longitude": -122.3930703,
+          "city": "San Francisco",
+          "streetAddress": "San Francisco International Airport International Parking Garage G",
+          "evConnectorTypes": ["J1772","NEMA520"],
+          "evPosts": ["1:90317","1:6208","1:6578","1:90405","1:89799","1:90191"],
+          "state": "CA"
+        },
+        {
+          "stationName": "CCSF - SFO",
+          "stationID": "60414",
+          "stationPhone": "888-758-4389",
+          "zipCode": "94128",
+          "accessHours": "24 hours daily",
+          "latitude": 37.6141309,
+          "longitude": -122.3915951,
+          "city": "San Francisco",
+          "streetAddress": "San Francisco International Airport International Parking Garage A",
+          "evConnectorTypes": ["J1772"],
+          "evPosts": ["1:90177","1:90493"],
+          "state": "CA"
+        },
+        {
+          "stationName": "CCSF - SFO",
+          "stationID": "60483",
+          "stationPhone": "888-758-4389",
+          "zipCode": "94128",
+          "accessHours": "24 hours daily",
+          "latitude": 37.6154149,
+          "longitude": -122.3859076,
+          "city": "San Francisco",
+          "streetAddress": "San Francisco International Airport Domestic Garage",
+          "evConnectorTypes": ["NEMA520","J1772"],
+          "evPosts": ["1:6312","1:6562","1:6899","1:90241","1:6332","1:6268","1:6528","1:90245","1:109263","1:6195","1:6210","1:6287","1:6577","1:6607","1:90185","1:108725","1:109259","1:109159","1:115765","1:6517","1:6580","1:88873","1:90117","1:90159","1:90201","1:90273","1:90407","1:90449","1:108703","1:108709","1:108723","1:108727","1:109179","1:109261","1:126079","1:123531","1:115861"],
+          "state": "CA"
+        },
+        {
+          "stationName": "CCSF - SFO",
+          "stationID": "68159",
+          "stationPhone": "888-758-4389",
+          "zipCode": "94128",
+          "accessHours": "24 hours daily",
+          "latitude": 37.6155991,
+          "longitude": -122.3930166,
+          "city": "San Francisco",
+          "streetAddress": "San Francsico International Airport International Parking Garage G",
+          "evConnectorTypes": ["J1772"],
+          "evPosts": ["1:90309"],
+          "state": "CA"
+        },
+        {
+          "stationName": "CCSF - SFO",
+          "stationID": "71026",
+          "stationPhone": "888-758-4389",
+          "zipCode": "94128",
+          "accessHours": "24 hours daily",
+          "latitude": 37.6165515,
+          "longitude": -122.3848728,
+          "city": "San Francisco",
+          "streetAddress": "Domestic Terminals Arrivals Level Domestic Garage",
+          "evConnectorTypes": ["NEMA520","J1772"],
+          "evPosts": ["1:6548"],
+          "state": "CA"
+        },
+        {
+          "stationName": "CCSF - SFO",
+          "stationID": "75097",
+          "stationPhone": "888-758-4389",
+          "zipCode": "94128",
+          "accessHours": "24 hours daily",
+          "latitude": 37.6162574,
+          "longitude": -122.3849895,
+          "city": "San Francisco",
+          "streetAddress": "323 Domestic Terminals Arrivals Level",
+          "evConnectorTypes": ["J1772"],
+          "evPosts": ["1:123561"],
+          "state": "CA"
+        },
+        {
+          "stationName": "CCSF - SFO",
+          "stationID": "82451",
+          "stationPhone": "888-758-4389",
+          "zipCode": "94128",
+          "accessHours": "24 hours daily",
+          "latitude": 37.615822,
+          "longitude": -122.3923509,
+          "city": "San Francisco",
+          "streetAddress": "N Link Rd International Parking Garage G",
+          "evConnectorTypes": ["NEMA520","J1772"],
+          "evPosts": ["1:6206"],
+          "state": "CA"
+        }
+    ]
+  }
+]

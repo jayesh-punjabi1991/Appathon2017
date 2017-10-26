@@ -1,0 +1,81 @@
+<div class="row" ng-init="initAutoComplete()">
+  <div class="col-md-9 col-sm-12 padding-0-right">
+    <div class="map-area">
+      <div id="map" style="height:560px"></div>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-12">
+    <div class="filter-area">
+      <div class="bs-example">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-plus"></span> Vehicle Selection</a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                      <div class="dropdown vehicle-select">
+                        <button class="btn btn-default dropdown-toggle v-dropdown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                          Select your vehicle
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                          <li ng-repeat="car in carsList">
+                            <a href="#" ng-click="getCarsDetails(car.car_id)">{{car.car_name}}</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="vehicle-details" ng-show="carSelected">
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <div class="car-icon">
+                              <i class="fa fa-car fa-5x bg-grey"></i>
+                            </div>
+                          </div>
+                          <div class="col-sm-8">
+                            <div class="car-dets">
+                              <!-- <p><span>Description: </span><span>{{carDetails.description}}</span></p> -->
+                              <p><span>Model: </span><span>{{carDetails.car_model}}</span></p>
+                              <p><span>Mileage: </span><span>{{carDetails.mileage}}</span></p>
+                              <p><span>Type: </span><span>{{carDetails.type}}</span></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="from-div">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">From</span>
+                          <input id="origin-input" type="text" ng-model="origInput" ng-change="getPlaces()" class="form-control controls" placeholder="" aria-describedby="basic-addon1">
+                        </div>
+                      </div>
+                      <div class="to-div">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">To</span>
+                          <input id="destination-input" type="text" ng-model="destInput" ng-change="getPlaces()" class="form-control controls" placeholder="" aria-describedby="basic-addon1">
+                        </div>
+                      </div>
+                      <!-- <div class="go-btn clearfix">
+                        <button type="button" name="button" class="btn btn-success rt">Search</button>
+                      </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-plus"></span> Filters</a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>

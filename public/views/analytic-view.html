@@ -1,0 +1,392 @@
+<div class="" ng-init="initAutoComplete()">
+  <div class="filter-area">
+    <h4>Search</h4>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="dropdown vehicle-select">
+          <button class="btn btn-default dropdown-toggle v-dropdown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Select your vehicle
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu car-dropdown" aria-labelledby="dropdownMenu1">
+            <li>
+              <a href="#" ng-click="getCarsDetails(50000)">Tesla Model S</a>
+              <a href="#" ng-click="getCarsDetails(50001)">Tesla Model 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 margin-top-small margin-top-middle">
+        <div class="dropdown vehicle-select">
+          <button class="btn btn-default dropdown-toggle d-dropdown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Select your driver
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu driver-dropdown" aria-labelledby="dropdownMenu1">
+            <li>
+              <a href="#" ng-click="getDriverDetails(52500)">Rajesh P</a>
+              <a href="#" ng-click="getDriverDetails(52501)">Pawan K</a>
+              <a href="#" ng-click="getDriverDetails(52502)">Neehit M</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-12">
+        <div class="from-div">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">From</span>
+            <input id="origin-input" type="text" class="form-control controls" placeholder="" aria-describedby="basic-addon1">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <div class="to-div">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">To</span>
+            <input id="destination-input" type="text" class="form-control controls" placeholder="" aria-describedby="basic-addon1">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <div class="to-div">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-map-marker"></i></span>
+            <input id="zipcode-input" type="text" ng-model="zipCode" class="form-control controls" placeholder="" aria-describedby="basic-addon1">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-7 col-sm-12 padding-0-right padding-right-middle">
+        <div class="radio">
+          <span class="text-bold">Weather Conditions : </span>
+          <label class="radio-inline">
+            <input type="radio" name="weatherConditions" id="weatherRadio1" value="1" ng-model="weatherCondition" checked> <i class="fa fa-sun-o"></i>&nbsp;&nbsp;Sunny or <i class="fa fa-cloud"></i>&nbsp;&nbsp;Cloudy
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="weatherConditions" id="weatherRadio4" value="0.85" ng-model="weatherCondition"> <i class="fa fa-umbrella"></i>&nbsp;&nbsp; Rainy
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="weatherConditions" id="weatherRadio4" value="0.7" ng-model="weatherCondition"> <i class="fa fa-snowflake-o"></i>&nbsp;&nbsp; Snowy
+          </label>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-5 col-sm-12">
+        <div class="radio">
+          <span class="text-bold">Road : </span>
+          <label class="radio-inline">
+            <input type="radio" name="roads" id="roadRadio1" value="400" ng-model="road"> Highway
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="roads" id="roadRadio2" value="550" ng-model="road"> Local
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="roads" id="roadRadio3" value="450" ng-model="road"> Mixed
+          </label>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-12 col-sm-12">
+        <div class="go-btn clearfix">
+          <button type="button" name="button" class="btn btn-success rt" ng-click="getAnalytics()">Go</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spinner-area" ng-show="goClicked">
+    <i class="fa fa-cog fa-spin fa-5x bg-green"></i>
+  </div>
+  <div class="analytic-area" ng-show="showAnalytics">
+    <h4>Travel Analytics</h4>
+    <div class="row">
+      <div class="col-sm-6 padding-0-right padding-right-small">
+        <div class="vehicle-details">
+          <div class="row">
+            <div class="col-xs-4">
+              <div class="car-icon">
+                <i class="fa fa-car fa-5x bg-green"></i>
+              </div>
+            </div>
+            <div class="col-xs-8">
+              <div class="car-dets">
+                <!-- <p><span>Description: </span><span>{{carDetails.description}}</span></p> -->
+                <p><span>Model: </span><span>{{analyticsData.vehicle.model}}</span></p>
+                <p><span>Battery: </span><span>{{analyticsData.vehicle.battery + ' ' + analyticsData.vehicle.batteryUOM}}</span></p>
+                <p><span>Category: </span><span>{{analyticsData.vehicle.category}}</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="vehicle-details">
+          <div class="row">
+            <div class="col-xs-4">
+              <div class="car-icon">
+                <i class="fa fa-user fa-5x bg-green"></i>
+              </div>
+            </div>
+            <div class="col-xs-8">
+              <div class="car-dets">
+                <!-- <p><span>Description: </span><span>{{carDetails.description}}</span></p> -->
+                <p><span>Name: </span><span>{{analyticsData.driver.firstName + ' ' + analyticsData.driver.lastName}}</span></p>
+                <p><span>Behavior: </span><span>{{analyticsData.driver.behavior}}</span></p>
+                <p><span>Driving Experience: </span><span>{{analyticsData.driver.yearDriving}}</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-6 padding-0-right padding-right-small">
+        <div class="row data-div">
+          <div class="col-sm-4 padding-0-right">
+              <span class="text-bold">Origin :</span>
+          </div>
+          <div class="col-sm-8 padding-0-right">
+              <span>{{analyticsData.distanceMatrix.origin}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-6 padding-0-right padding-right-small padding-right-middle">
+        <div class="row data-div">
+          <div class="col-sm-4 padding-0-right">
+              <span class="text-bold">Destination :</span>
+          </div>
+          <div class="col-sm-8 padding-0-right">
+              <span>{{analyticsData.distanceMatrix.destination}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-12 col-sm-12 clearfix padding-0-right padding-right-small padding-right-middle">
+        <button type="button" name="button" class="btn btn-success dir-btn rt" ng-click="initMap(); getDirections()">Get Directions</button>
+      </div>
+      <div class="col-lg-2 col-md-12 col-sm-12 clearfix">
+        <button type="button" name="button" class="btn btn-success dir-btn rt" ng-click="getTrafficGraph()">Get Traffic</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-sm-6 padding-0-right padding-right-small">
+        <div class="data-div">
+          <p class="text-bold margin-0">Current Charge</p>
+          <i class="fa fa-5x fa-battery-full bg-green"></i>
+          <p>{{analyticsData.soc.currentCharge}} %</p>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-6 padding-0-right padding-right-small padding-right-middle">
+        <div class="data-div">
+          <p class="text-bold margin-0">Required Charge</p>
+          <i class="fa fa-5x fa-battery-three-quarters bg-green"></i>
+          <p>{{analyticsData.soc.totalChargeNeeded}} %</p>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-6 padding-0-right padding-right-small">
+        <div class="data-div">
+          <p class="text-bold margin-0">Remaining Charge</p>
+          <i class="fa fa-5x fa-battery-quarter bg-red"></i>
+          <p>{{analyticsData.soc.remainingBatteryCharge}} %</p>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-6 padding-0-right padding-right-small padding-right-middle">
+        <div class="data-div">
+          <p class="text-bold margin-0">Total Distance</p>
+          <i class="fa fa-5x fa-road bg-green"></i>
+          <p>{{analyticsData.distanceMatrix.distance}}</p>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-6">
+        <div class="data-div">
+          <p class="text-bold margin-0">Total Duration</p>
+          <i class="fa fa-5x fa-clock-o bg-green"></i>
+          <p>{{analyticsData.distanceMatrix.duration}}</p>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-6 padding-0-right padding-right-small">
+        <div class="data-div">
+          <p class="text-bold margin-0">Stations Count</p>
+          <i class="fa fa-5x fa-plug bg-green"></i>
+          <p>{{analyticsData.stationStats.stationCount}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="map-area" ng-show="directionsRequest">
+    <div class="clearfix">
+      <h4 class="lt">View Directions</h4>
+      <button type="button" name="button" class="btn rt" ng-click="closeMap()"><i class="fa fa-times" ></i> Close</button>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-sm-12">
+        <div id="map" style="height:300px"></div>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <div id="directions-panel" class="panel"></div>
+      </div>
+    </div>
+  </div>
+  <div class="traffic-area" ng-show="trafficRequest">
+    <div class="clearfix">
+      <h4 class="lt">View Traffic</h4>
+      <button type="button" name="button" class="btn rt" ng-click="closeTraffic()"><i class="fa fa-times" ></i> Close</button>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-xs-12 padding-0-right padding-right-small">
+        <div class="data-div">
+          <div id="trafficChart" style="height:300px"></div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-xs-12">
+        <div class="data-div">
+          <div id="trafficChart1" style="height:300px"></div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="col-xs-2 col-xs-offset-2 padding-0-right">
+        <span class="NE-Icon"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="legend-label"> NorthEast</span>
+      </div>
+      <div class="col-xs-2 padding-0-right">
+        <span class="NW-Icon"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="legend-label"> NorthWest</span>
+      </div>
+      <div class="col-xs-2 padding-0-right">
+        <span class="SE-Icon"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="legend-label"> SouthEast</span>
+      </div>
+      <div class="col-xs-2">
+        <span class="SW-Icon"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="legend-label"> SouthWest</span>
+      </div>
+    </div> -->
+    <div class="hidden-div">
+      <table id="freq" border="0" cellspacing="0" cellpadding="0">
+        <tr nowrap bgcolor="#CCCCFF">
+            <th colspan="9" class="hdr">Table of Frequencies</th>
+        </tr>
+        <tr nowrap bgcolor="#CCCCFF">
+            <th class="freq">Direction</th>
+            <th class="freq">Car</th>
+            <th class="freq">Truck</th>
+            <th class="freq">Motorcycle</th>
+            <th class="freq">Vehicle</th>
+        </tr>
+        <tr nowrap>
+            <td class="dir">NE</td>
+            <td class="data">{{trafficData.car.Northeast}}</td>
+            <td class="data">{{trafficData.truck.Northeast}}</td>
+            <td class="data">{{trafficData.motorcycle.Northeast}}</td>
+            <td class="data">{{trafficData.vehicle.Northeast}}</td>
+        </tr>
+        <tr nowrap>
+            <td class="dir">NW</td>
+            <td class="data">{{trafficData.car.Northwest}}</td>
+            <td class="data">{{trafficData.truck.Northwest}}</td>
+            <td class="data">{{trafficData.motorcycle.Northwest}}</td>
+            <td class="data">{{trafficData.vehicle.Northwest}}</td>
+        </tr>
+        <tr nowrap>
+            <td class="dir">SE</td>
+            <td class="data">{{trafficData.car.Southeast}}</td>
+            <td class="data">{{trafficData.truck.Southeast}}</td>
+            <td class="data">{{trafficData.motorcycle.Southeast}}</td>
+            <td class="data">{{trafficData.vehicle.Southeast}}</td>
+        </tr>
+        <tr nowrap>
+            <td class="dir">SW</td>
+            <td class="data">{{trafficData.car.Southwest}}</td>
+            <td class="data">{{trafficData.truck.Southwest}}</td>
+            <td class="data">{{trafficData.motorcycle.Southwest}}</td>
+            <td class="data">{{trafficData.vehicle.Southwest}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="station-area" ng-show="showAnalytics">
+    <h4>Stations</h4>
+    <table class="table table-hover">
+      <thead>
+        <th>Station Name</th>
+        <th>City</th>
+        <th>Phone</th>
+        <th>Access Hours</th>
+        <th></th>
+      </thead>
+      <tbody ng-repeat="station in stationData">
+        <tr data-toggle="collapse" data-target="#data{{$index + 1}}">
+          <td ng-class="($index + 1) == 1 || ($index + 1) == 2 ? 'text-green text-bold' : (($index + 1) == 3 || ($index + 1) == 4 ? 'text-yellow text-bold' : '')">{{station.stationName}}</td>
+          <td ng-class="($index + 1) == 1 || ($index + 1) == 2 ? 'text-green text-bold' : (($index + 1) == 3 || ($index + 1) == 4 ? 'text-yellow text-bold' : '')">{{station.city}}</td>
+          <td ng-class="($index + 1) == 1 || ($index + 1) == 2 ? 'text-green text-bold' : (($index + 1) == 3 || ($index + 1) == 4 ? 'text-yellow text-bold' : '')">{{station.stationPhone}}</td>
+          <td ng-class="($index + 1) == 1 || ($index + 1) == 2 ? 'text-green text-bold' : (($index + 1) == 3 || ($index + 1) == 4 ? 'text-yellow text-bold' : '')">{{station.accessHours}}</td>
+          <td><button type="button" name="button" class="btn btn-success" ng-click="viewBookingDetails(station.stationID)">Book</button></td>
+        </tr>
+        <tr>
+          <td class="hiddenRow" colspan="5">
+            <div id="data{{$index + 1}}" class="collapse station-details">
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="row margin-5-top">
+                    <div class="col-sm-4 padding-0-right">
+                      <span class="text-bold">Station Name</span>
+                    </div>
+                    <div class="col-sm-4 padding-0-right">
+                      <span>: {{station.stationName}}</span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4 padding-0-right">
+                      <span class="text-bold">Station ID</span>
+                    </div>
+                    <div class="col-sm-4 padding-0-right">
+                      <span>: {{station.stationID}}</span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4 padding-0-right">
+                      <span class="text-bold">Station Address</span>
+                    </div>
+                    <div class="col-sm-4 padding-0-right">
+                      <span>: {{station.streetAddress + ',' + station.city + ','+ station.state + ',' + station.zipCode}}</span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <p class="text-bold">Connector Types</p>
+                    </div>
+                    <div class="col-sm-12">
+                      <table class="table table-bordered">
+                        <thead>
+                          <th>#</th>
+                          <th>Connector Id</th>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="connector in station.evConnectorTypes">
+                            <td>{{$index+1}}</td>
+                            <td>{{connector}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <p class="text-bold">Pumps</p>
+                  <table class="table table-bordered">
+                    <thead>
+                      <th>#</th>
+                      <th>Pump Id</th>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="pump in station.evPosts">
+                        <td>{{$index+1}}</td>
+                        <td>{{pump}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

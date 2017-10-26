@@ -1,0 +1,287 @@
+.lt{
+  float: left;
+}
+.rt{
+  float: right;
+}
+.main-wrapper{
+  padding-top: 60px;
+}
+.navbar{
+  margin-bottom: 0;
+  background-color: black;
+  border-color: black;
+}
+.navbar-default .navbar-brand{
+  color: white !important;
+  padding: 0;
+  width: 200px;
+  display: inline-block;
+}
+.navbar-default {
+    background-color: #333;
+    border: 0;
+}
+.navbar .logo {
+    display: inline-block;
+    width: 40px;
+    margin: 5px;
+}
+.heading {
+  margin: 0px 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+body {
+  padding-bottom: 30px;
+  background-color:  #e7e7e7;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+}
+.footer-div{
+  min-height: 20px;
+}
+
+.filter-area, .analytic-area, .station-area, .map-area, .traffic-area, .details-area, .pumps-area, .booking-area, .realtime-area, .p-filter-area{
+  border:1px solid #e7e7e7;
+  background-color: white;
+  padding: 15px;
+  -webkit-box-shadow: -2px 3px 10px 1px rgba(0,0,0,0.25);
+  -moz-box-shadow: -2px 3px 10px 1px rgba(0,0,0,0.25);
+  box-shadow: -2px 3px 10px 1px rgba(0,0,0,0.25);
+}
+.analytic-area, .station-area, .map-area, .traffic-area, .pumps-area, .details-area, .p-filter-area{
+  margin-top: 8px;
+}
+.padding-0-right{
+    padding-right:0;
+}
+.padding-0-left{
+    padding-left:0;
+}
+.panel-group{
+  margin-bottom: 0;
+}
+.panel-heading {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.panel-group .panel{
+  border-radius: 0;
+}
+.vehicle-select .v-dropdown, .d-dropdown{
+  width: 100%;
+}
+
+.vehicle-select .dropdown-menu{
+  width: 100%;
+}
+.vehicle-details{
+  margin-top: 10px;
+  padding: 5px;
+  border: 1px solid #e7e7e7;
+  -webkit-box-shadow: -2px 3px 10px 1px rgba(0,0,0,0.1);
+  -moz-box-shadow: -2px 3px 10px 1px rgba(0,0,0,0.1);
+  box-shadow: -2px 3px 10px 1px rgba(0,0,0,0.1);
+}
+.car-icon, .data-div, .dir-btn{
+  text-align: center;
+  margin: 10px 0;
+}
+.data-div{
+  border: 1px solid #e7e7e7;
+  padding: 8px;
+  -webkit-box-shadow: -2px 3px 10px 1px rgba(0,0,0,0.1);
+  -moz-box-shadow: -2px 3px 10px 1px rgba(0,0,0,0.1);
+  box-shadow: -2px 3px 10px 1px rgba(0,0,0,0.1);
+}
+.dir-btn{
+  padding: 7px 45px;
+}
+.car-dets{
+  margin-top: 5px;
+}
+.bg-green{
+  color: #18d1af;
+}
+.from-div, .to-div{
+  margin-top: 10px;
+}
+.go-btn{
+  margin-top: 10px;
+}
+.hiddenRow{
+  padding: 0 !important;
+  border-top: 0 !important;
+}
+.station-details{
+  padding: 20px;
+}
+.text-bold{
+  font-weight: bold;
+}
+.margin-5-top{
+  margin-top: 5px;
+}
+#sideNav {
+   background-color: #1B1B1B;
+   width: 100px;
+   position: fixed;
+   height: 100%;
+   margin-top:50px;
+}
+#sideNav ul{
+  padding: 0px;
+}
+#sideNav ul > li:first-child{
+  margin-top: 0px;
+}
+#sideNav ul > li{
+  margin-top: 5px;
+  padding: 10px 20px;
+}
+#sideNav ul > li > a {
+  color: white;
+}
+#sideNav ul > li > a:hover {
+  color: grey;
+  text-decoration: none;
+}
+.sidebar-active{
+  background-color: #18d1af;
+}
+#main-wrapper {
+  float: left;
+  min-height: 100%;
+  margin-left: 109px;
+  margin-top: 60px;
+}
+.margin-0{
+  margin-left: 0;
+  margin-right: 0;
+}
+.main-content{
+  position: relative;
+  height: 100%;
+}
+.radio{
+  margin: 15px 0;
+}
+ #directions-panel {
+   height: 300px;
+   overflow-y: scroll;
+ }
+ /*.map-div{
+   position: relative;
+ }*/
+.menu-icon{
+  margin-bottom: 5px;
+}
+.main-mobile{
+  margin-top:60px;
+  min-height: 100%;
+}
+/*#map{
+  padding: 0;
+  height: 300px;
+  width: 100%;
+}*/
+.text-center{
+  text-align: center;
+}
+.text-white{
+  color: white;
+}
+.btn-success{
+  background-color: #18d1af;
+  border-color: #18d1af;
+}
+.btn-success:hover, .btn-success:focus{
+  background-color: #18d1af;
+  border-color: #18d1af;
+}
+/*.table-hover> tbody >tr:hover {
+    background-color: #18d1af;
+}*/
+.table .btn{
+  padding: 1px 12px;
+}
+.bg-red{
+  color: #aa1101;
+}
+.plug-images img{
+  height:115px;
+  width:115px;
+  margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.margin-0-top{
+  margin-top: 0;
+}
+/*.pump-img{
+  width: 200px;
+}*/
+.pump-img img{
+  height: 200px;
+  width:200px;
+  margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.pump-details{
+  height: 200px;
+  overflow-y: auto;
+}
+.margin-5-left{
+  margin-left: 5px;
+}
+.NE-Icon{
+  height:15px;
+  width:15px;
+  border-radius: 4px;
+  background-color: #90ee7e;
+  display: inline-block;
+}
+.NW-Icon{
+  height:15px;
+  width:15px;
+  border-radius: 4px;
+  background-color: #88648f;
+  display: inline-block;
+}
+.SW-Icon{
+  height:15px;
+  width:15px;
+  border-radius: 4px;
+  background-color: #7cb5ec;
+  display: inline-block;
+}
+.SE-Icon{
+  height:15px;
+  width:15px;
+  border-radius: 4px;
+  background-color: #f7a35c;
+  display: inline-block;
+}
+.legend-label{
+  vertical-align: text-bottom;
+}
+.hidden-div{
+  display: none;
+}
+.iframe-div{
+  height: 500px;
+  width: 100%;
+}
+.text-green{
+  color: #18d1af;
+}
+.text-yellow{
+  color: #f0cd30;
+}
+.spinner-area{
+  margin: 30px auto;
+  width:100%;
+  text-align: center;
+}

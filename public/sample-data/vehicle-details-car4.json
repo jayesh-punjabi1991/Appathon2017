@@ -1,0 +1,10 @@
+[
+    {
+        "car_name": "Chevrolet",
+        "car_id": "4",
+        "description": "Electric Vehicle",
+        "type": "Electric",
+        "car_model": "QW123",
+        "mileage": "19"
+    }
+]

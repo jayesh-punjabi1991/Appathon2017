@@ -1,0 +1,113 @@
+<div class="booking-area">
+  <div class="row">
+    <div class="col-sm-3 col-xs-6 margin-5-top">
+      <span class="text-bold">Queue at the Station: &nbsp;&nbsp;</span><span>{{stationData.queueSize}}</span>
+    </div>
+    <div class="col-sm-3 col-xs-6 margin-5-top">
+      <span class="text-bold">Waiting Time: &nbsp;&nbsp;</span><span>{{stationData.availableSlot}}</span>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <div class="clearfix">
+        <button type="button" name="button" class="btn btn-success lt-md-lg rt-small">Confirm Booking</button>
+        <button type="button" name="button" class="btn btn-success lt-md-lg rt-small margin-5-left margin-5-right-small">Back</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="details-area">
+  <h3 class="margin-0-top">{{stationData.stationName}}</h3>
+  <div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12 padding-0-right padding-right-small padding-right-middle">
+      <!-- <div class="row margin-5-top">
+        <div class="col-sm-4 padding-0-right">
+          <span class="text-bold">Station Name</span>
+        </div>
+        <div class="col-sm-4 padding-0-right">
+          <span>: {{stationData[0].stationName}}</span>
+        </div>
+      </div> -->
+      <div class="row margin-5-top">
+        <div class="col-sm-4 col-xs-6 padding-0-right">
+          <span class="text-bold">Station ID</span>
+        </div>
+        <div class="col-sm-4 col-xs-6 padding-0-right ">
+          <span>: {{stationData.stationID}}</span>
+        </div>
+      </div>
+      <div class="row margin-5-top">
+        <div class="col-sm-4 col-xs-6 padding-0-right">
+          <span class="text-bold">Station Address</span>
+        </div>
+        <div class="col-sm-4 col-xs-6 padding-0-right">
+          <span>: {{stationData.streetAddress + ',' + stationData.city + ','+ stationData.state + ',' + stationData.zipCode}}</span>
+        </div>
+      </div>
+      <div class="row margin-5-top">
+        <div class="col-sm-4 col-xs-6 padding-0-right">
+          <span class="text-bold">Station Phone</span>
+        </div>
+        <div class="col-sm-4 col-xs-6 padding-0-right">
+          <span>: {{stationData.phoneNumber}}</span>
+        </div>
+      </div>
+      <div class="row margin-5-top">
+        <div class="col-sm-4 col-xs-6 padding-0-right">
+          <span class="text-bold">Access Hours</span>
+        </div>
+        <div class="col-sm-4 col-xs-6 padding-0-right">
+          <span>: {{stationData.accessHours}}</span>
+        </div>
+      </div>
+      <div class="row margin-5-top">
+        <div class="col-sm-4 col-xs-6 padding-0-right">
+          <span class="text-bold">Intersection Directions :</span>
+        </div>
+        <div class="col-sm-4 col-xs-6 padding-0-right">
+          <span>: {{stationData.intersectionDirections}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <p class="text-bold">Connector Types</p>
+      <div>
+        <div class="col-md-3 col-sm-6 col-xs-12" ng-repeat="connector in stationData.connectorTypes">
+          <div class="plug-images" ng-if="connector == 'J1772'">
+            <img class="text-center" src="images/j1772.png" alt="J1772">
+            <p class="text-center text-bold margin-5-top">{{connector}}</p>
+          </div>
+          <div class="plug-images" ng-if="connector == 'NEMA520'">
+            <img class="text-center" src="images/nema 520.png" alt="NEMA520">
+            <p class="text-center text-bold margin-5-top">{{connector}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pumps-area">
+  <div class="row">
+    <div class="col-sm-4 col-md-4 col-xs-12 padding-0-right padding-right-small padding-right-middle">
+      <div class="pump-img">
+        <img src="images/evstation.jpg" alt="">
+        <p class="text-center margin-5-top"><span class="text-bold">Number of Pumps :</span><span>{{stationData.evPostCount}}</span></p>
+      </div>
+    </div>
+    <div class="col-sm-8 col-md-8 col-xs-12">
+      <div class="pump-details">
+        <p class="text-bold">Pumps</p>
+        <table class="table table-bordered">
+          <thead>
+            <th>#</th>
+            <th>Pump Id</th>
+          </thead>
+          <tbody>
+            <tr ng-repeat="pump in stationData.postIDs">
+              <td>{{$index+1}}</td>
+              <td>{{pump}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

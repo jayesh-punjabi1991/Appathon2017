@@ -1,0 +1,24 @@
+/***************For tablets******************/
+@media only screen and (min-width: 768px) and (max-width: 992px){
+  .hidden-middle{
+    display: none;
+  }
+  .padding-left-middle{
+    padding-left: 15px;
+  }
+  .padding-right-middle{
+    padding-right: 15px;
+  }
+  .margin-top-middle{
+    margin-top: 10px;
+  }
+  #main-wrapper {
+    min-height: 100%;
+    margin-top: 60px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .lt-md-lg{
+    float: left
+  }
+}

@@ -1,0 +1,10 @@
+[
+    {
+        "car_name": "Renault",
+        "car_id": "3",
+        "description": "Electric Vehicle",
+        "type": "Electric",
+        "car_model": "AQ103",
+        "mileage": "18"
+    }
+]

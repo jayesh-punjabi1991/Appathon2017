@@ -1,0 +1,76 @@
+<div class="">
+  <div class="realtime-area">
+    <div class="row">
+      <div class="col-xs-12 clearfix">
+        <a href="https://grapheventconsumerhack2017-1.run.aws-usw02-pr.ice.predix.io/graph.htm?" class="btn btn-success rt"><i class="fa fa-area-chart"></i>&nbsp;&nbsp; View Live Sensor Data</a>
+      </div>
+    </div>
+  </div>
+  <div class="p-filter-area">
+    <h4>Search</h4>
+    <div class="row">
+      <div class="col-md-4 col-sm-12">
+        <div class="dropdown vehicle-select">
+          <button class="btn btn-default dropdown-toggle v-dropdown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Select your vehicle
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu car-dropdown" aria-labelledby="dropdownMenu1">
+            <li>
+              <a href="#" ng-click="getCarsDetails(50000)">Tesla Model S</a>
+              <a href="#" ng-click="getCarsDetails(50001)">Tesla Model 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12 margin-top-small margin-top-middle">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 padding-0-right">
+            <p class="input-group">
+              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="startDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <p class="input-group">
+              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="endDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="go-btn clearfix">
+          <button type="button" name="button" class="btn btn-success rt" ng-click="getParameters()">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spinner-area" ng-show="goClicked">
+    <i class="fa fa-cog fa-spin fa-5x bg-green"></i>
+  </div>
+  <div class="analytic-area" ng-show="showCharts">
+    <ul class="nav nav-pills" role="tablist">
+      <li role="presentation" class="active"><a href="#tab1" aria-controls="home" role="tab" data-toggle="tab">Voltage</a></li>
+      <li role="presentation"><a href="#tab2" aria-controls="profile" role="tab" data-toggle="tab">Temperature</a></li>
+      <li role="presentation"><a href="#tab3" aria-controls="messages" role="tab" data-toggle="tab">Core Speed</a></li>
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="tab1">
+        <div id="oilPressureChart" style="width:100%; height:325px;"></div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="tab2">
+        <div id="oilTemperatureChart" style="width:100%; height:325px;"></div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="tab3">
+        <div id="coreSpeedChart" style="width:100%; height:325px;"></div>
+      </div>
+    </div>
+  </div>
+</div>

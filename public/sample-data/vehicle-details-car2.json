@@ -1,0 +1,10 @@
+[
+    {
+        "car_name": "Revo Maruti",
+        "car_id": "2",
+        "description": "Electric Vehicle",
+        "type": "Electric",
+        "car_model": "LZ103",
+        "mileage": "22"
+    }
+]

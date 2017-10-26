@@ -1,0 +1,7 @@
+---
+applications:
+  - name: planandplug
+    buildpack: https://github.com/muymoo/staticfile-buildpack.git
+    path: dist
+    memory: 128MB
+    stack: cflinuxfs2
